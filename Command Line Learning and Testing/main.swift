@@ -3,7 +3,7 @@
 //  Command Line Learning and Testing
 //
 //  Created by JWI Master on 14/6/2025.
-//
+//  Please push to GitHub
 
 var Div: Bool = false
 for num in 2...100 {
