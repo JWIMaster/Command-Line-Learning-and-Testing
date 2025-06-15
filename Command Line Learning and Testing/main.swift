@@ -23,7 +23,7 @@ for num in 2...100 { // Main Number Loop
 }*/
 
 //Prime Number Calculator V2 - Arrays and Sets
-var isDivisible: Bool = false
+/*var isDivisible: Bool = false
 var primeNumberArray: [Int] = []
 var primeNumberSet: Set<Int> = []
 for num in 2...100 {
@@ -49,9 +49,41 @@ print("")
 print("And these are the prime numbers in an ordered array")
 for x in primeNumberArray {
     print("\(x), ", terminator: "")
+}*/
+
+//Prime Number Calculator 3 - Functions
+var isDivisible: Bool = false
+var primeNumberArray: [Int] = []
+var primeNumberSet: Set<Int> = []
+
+
+func checkForPrimesUpTo(_ maxPrime: Int) { // function that takes an argument to define the limit of primes being calculated, _ used to prevent us from writing out maxPrime every time we call the function
+    for num in 2...maxPrime {
+        for num2 in 2..<num {
+            if num%num2 == 0 {
+                isDivisible = true
+            }
+        }
+        if isDivisible {
+            isDivisible = false
+        }
+        else {
+            primeNumberSet.insert(num)
+            primeNumberArray.append(num)
+        }
+    }
+    print("These are the prime numbers in an unordered set")
+    for x in primeNumberSet {
+        print("\(x), ", terminator: "") // print("", terminator: "") prevents a newline
+    }
+    print("")
+    print("And these are the prime numbers in an ordered array")
+    for x in primeNumberArray {
+        print("\(x), ", terminator: "")
+    }
 }
 
 
-
+print(checkForPrimesUpTo(200))
 
 
